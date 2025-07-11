@@ -1,0 +1,352 @@
+/* Styles specific to the programs.html page */
+
+
+/* Navigation Bar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar .container { /* Specific container for navbar to keep its flex behavior */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Keep navbar items in a row */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* General container for other sections - ONLY controls max-width and padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Crucial for preventing content from touching edges */
+}
+
+/* --- LOGO SECTION MODIFICATION START --- */
+.logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #8dc63f;
+    display: flex; /* Make it a flex container to arrange image and text */
+    align-items: center; /* Vertically align the image and text */
+    gap: 10px; /* Adds space between the logo image and the text */
+}
+
+.logo .logo-icon { /* Specific class for the image inside the logo div */
+    height: 70px; /* Adjust this value to control your small logo's height */
+    width: auto; /* Maintains aspect ratio */
+    border-radius: 20%; /* Keep this if you want rounded corners, change to 50% for circular */
+    display: block; /* Removes any extra space below the image */
+}
+/* --- LOGO SECTION MODIFICATION END --- */
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex; /* Always a flex row on desktop */
+    align-items: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for mobile menu */
+}
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 5px 0; /* Add some padding for better touch targets */
+}
+.nav-links a:hover {
+    color: #8dc63f;
+}
+
+/* Hamburger Menu Toggle (Hidden by default on desktop) */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above other content */
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+.page-content {
+    /* This padding ensures content doesn't get hidden under the fixed navbar */
+    padding-top: 80px;
+}
+
+.programs-hero {
+    /* Background image with overlay for readability */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/banner3.jpg') center center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 40vh; /* Minimum height for the hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.programs-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #8dc63f; /* Highlight color for the heading */
+}
+
+.programs-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Common section heading and subhead styles, replicated for consistency */
+.section-heading {
+    font-size: 2.5rem;
+    color: #8dc63f;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-subhead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: center;
+}
+
+
+.program-details {
+    padding: 80px 20px;
+    background: #f9f9f9; /* Light background for the details section */
+    display: grid;
+    /* Responsive grid: auto-fit ensures columns wrap, minmax sets min/max width */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between grid items */
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid */
+}
+
+.program-level {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Subtle shadow for depth */
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    display: flex; /* Make it a flex container to manage content and button */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Pushes the button to the bottom */
+}
+
+.program-level:hover {
+    transform: translateY(-5px); /* Lifts the card slightly on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+}
+
+.program-level h3 {
+    color: #8dc63f; /* Highlight color for program titles */
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.program-level p {
+    margin-bottom: 15px;
+    color: #555;
+    flex-grow: 1; /* Allows the paragraph to take up available space, pushing the button down */
+}
+
+.program-level ul {
+    list-style: none; /* Remove default list bullets */
+    padding-left: 0;
+    margin-bottom: 20px; /* Space between list and button */
+}
+
+.program-level ul li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.program-level ul li::before {
+    content: '✓'; /* Custom checkmark icon */
+    color: #8dc63f;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.learn-more-btn {
+    display: inline-block; /* Allows padding and margin */
+    padding: 10px 20px;
+    background: #333; /* Dark background for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: none; /* In case it becomes an <a> tag later */
+    transition: background 0.3s ease; /* Smooth hover effect */
+    align-self: flex-start; /* Aligns the button to the left within its flex container */
+}
+
+.learn-more-btn:hover {
+    background: #555; /* Slightly lighter background on hover */
+}
+
+
+/* Chat Widget */
+.chat-whatsapp-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.chat-widget {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer; /* Indicate it's clickable */
+}
+.chat-widget .message {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    /* Initial state for animation */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
+}
+.chat-widget .profile-pic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8dc63f; /* Add a subtle border */
+}
+
+/* --- FOOTER SECTION STYLES --- */
+.footer {
+    background: #333;
+    color: white;
+    padding: 60px 20px 20px;
+    font-size: 0.95rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #8dc63f;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #8dc63f;
+    margin-top: 8px;
+    left: 0;
+    position: absolute;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #8dc63f;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.footer-col.newsletter input[type="email"] {
+    width: calc(100% - 80px);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.footer-col.newsletter button {
+    width: 70px;
+    padding: 10px;
+    background: #8dc63f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.footer-col.newsletter button:hover {
+    background: #6fa230;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* --- Responsive Adjustments for Programs Page --- */
+@media (max-width: 768px) {
+    .programs-hero {
+        padding: 80px 20px;
+    }
+    .programs-hero h1 {
+        font-size: 2.2rem;
+    }
+    .programs-hero p {
+        font-size: 1rem;
+    }
+    /* program-details already uses auto-fit for responsiveness, which handles smaller screens */
+}
