@@ -1,0 +1,454 @@
+/* Styles specific to the contact.html page */
+/* Navigation Bar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar .container { /* Specific container for navbar to keep its flex behavior */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Keep navbar items in a row */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* General container for other sections - ONLY controls max-width and padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Crucial for preventing content from touching edges */
+}
+
+/* --- LOGO SECTION MODIFICATION START --- */
+.logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #8dc63f;
+    display: flex; /* Make it a flex container to arrange image and text */
+    align-items: center; /* Vertically align the image and text */
+    gap: 10px; /* Adds space between the logo image and the text */
+}
+
+.logo .logo-icon { /* Specific class for the image inside the logo div */
+    height: 70px; /* Adjust this value to control your small logo's height */
+    width: auto; /* Maintains aspect ratio */
+    border-radius: 20%; /* Keep this if you want rounded corners, change to 50% for circular */
+    display: block; /* Removes any extra space below the image */
+}
+/* --- LOGO SECTION MODIFICATION END --- */
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex; /* Always a flex row on desktop */
+    align-items: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for mobile menu */
+}
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 5px 0; /* Add some padding for better touch targets */
+}
+.nav-links a:hover {
+    color: #8dc63f;
+}
+
+/* Hamburger Menu Toggle (Hidden by default on desktop) */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above other content */
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-content {
+    padding-top: 80px; /* Space below fixed navbar */
+}
+
+.contact-hero {
+    /* Background image with overlay for readability, consistent with other hero sections */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/banner1.jpg') center center/cover no-repeat; /* Using a different banner image */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #8dc63f; /* Highlight color */
+}
+
+.contact-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Common section heading and subhead styles, replicated for consistency */
+.section-heading {
+    font-size: 2.5rem;
+    color: #8dc63f;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-subhead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+    color: #555;
+    text-align: center;
+}
+
+/* Contact Information Section */
+.contact-info-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info-grid .info-card { /* Reusing info-card but adjusting for contact info */
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center; /* Center content within info card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.contact-info-grid .info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.contact-info-grid .info-card .icon-circle {
+    width: 60px;
+    height: 60px;
+    background: #8dc63f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem; /* Larger icon */
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.contact-info-grid .info-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-info-grid .info-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 5px; /* Space between paragraphs */
+}
+
+.contact-info-grid .info-card p a {
+    color: #8dc63f; /* Link color */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info-grid .info-card p a:hover {
+    text-decoration: underline;
+    color: #6fa230;
+}
+
+
+/* Contact Form Section */
+.contact-form-section {
+    padding: 80px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #333;
+    background: #fefefe;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #8dc63f;
+    box-shadow: 0 0 0 3px rgba(141, 198, 63, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.contact-form .submit-btn {
+    display: block; /* Make button full width */
+    width: 100%;
+    padding: 15px 25px;
+    background: #8dc63f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background: #6fa230;
+    transform: translateY(-2px);
+}
+
+/* Map Section (replicated from main page) */
+.map-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.map-section .section-heading { /* Ensure these styles are picked up */
+    color: #8dc63f;
+}
+
+.map-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 0;
+    display: block;
+}
+
+* Chat Widget */
+.chat-whatsapp-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.chat-widget {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer; /* Indicate it's clickable */
+}
+.chat-widget .message {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    /* Initial state for animation */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
+}
+.chat-widget .profile-pic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8dc63f; /* Add a subtle border */
+}
+
+/* --- FOOTER SECTION STYLES --- */
+.footer {
+    background: #333;
+    color: white;
+    padding: 60px 20px 20px;
+    font-size: 0.95rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #8dc63f;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #8dc63f;
+    margin-top: 8px;
+    left: 0;
+    position: absolute;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #8dc63f;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.footer-col.newsletter input[type="email"] {
+    width: calc(100% - 80px);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.footer-col.newsletter button {
+    width: 70px;
+    padding: 10px;
+    background: #8dc63f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.footer-col.newsletter button:hover {
+    background: #6fa230;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Responsive Adjustments for Contact Page */
+@media (max-width: 768px) {
+    .contact-hero {
+        padding: 80px 20px;
+    }
+    .contact-hero h1 {
+        font-size: 2.2rem;
+    }
+    .contact-hero p {
+        font-size: 1rem;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr; /* Stack info cards on mobile */
+    }
+
+    .contact-info-grid .info-card {
+        padding: 25px;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+}

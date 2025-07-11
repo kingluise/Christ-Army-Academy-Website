@@ -1,0 +1,462 @@
+/* Styles specific to the admissions.html page */
+
+/* Navigation Bar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.navbar .container { /* Specific container for navbar to keep its flex behavior */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex; /* Keep navbar items in a row */
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* General container for other sections - ONLY controls max-width and padding */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Crucial for preventing content from touching edges */
+}
+
+/* --- LOGO SECTION MODIFICATION START --- */
+.logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    color: #8dc63f;
+    display: flex; /* Make it a flex container to arrange image and text */
+    align-items: center; /* Vertically align the image and text */
+    gap: 10px; /* Adds space between the logo image and the text */
+}
+
+.logo .logo-icon { /* Specific class for the image inside the logo div */
+    height: 70px; /* Adjust this value to control your small logo's height */
+    width: auto; /* Maintains aspect ratio */
+    border-radius: 20%; /* Keep this if you want rounded corners, change to 50% for circular */
+    display: block; /* Removes any extra space below the image */
+}
+/* --- LOGO SECTION MODIFICATION END --- */
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex; /* Always a flex row on desktop */
+    align-items: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for mobile menu */
+}
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 5px 0; /* Add some padding for better touch targets */
+}
+.nav-links a:hover {
+    color: #8dc63f;
+}
+
+/* Hamburger Menu Toggle (Hidden by default on desktop) */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 101; /* Ensure it's above other content */
+}
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+/* This padding ensures content doesn't get hidden under the fixed navbar */
+.page-content {
+    padding-top: 80px;
+}
+
+.admissions-hero {
+    /* Background image with overlay for readability, consistent with programs-hero */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/sch1.jpg') center center/cover no-repeat; /* Using sch1.jpg for variety */
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 40vh; /* Minimum height for the hero section */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.admissions-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #8dc63f; /* Highlight color for the heading */
+}
+
+.admissions-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Common section heading and subhead styles, replicated for consistency */
+.section-heading {
+    font-size: 2.5rem;
+    color: #8dc63f;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.section-subhead {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 50px; /* More space below subhead */
+    color: #555;
+    text-align: center;
+}
+
+/* Admissions Process Section */
+.admissions-process {
+    padding: 80px 20px;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: #8dc63f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.step-card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Requirements & Fees Section */
+.requirements-fees {
+    padding: 80px 20px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push button to bottom */
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.info-card h3 {
+    font-size: 1.8rem;
+    color: #8dc63f;
+    margin-bottom: 15px;
+}
+
+.info-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    flex-grow: 1; /* Allow paragraph to take available space */
+}
+
+.info-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.info-card ul li {
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.info-card ul li::before {
+    content: '✓';
+    color: #8dc63f;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: #8dc63f; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    align-self: flex-start; /* Align button to the left */
+}
+
+.primary-btn:hover {
+    background: #6fa230; /* Darker green on hover */
+}
+
+/* Call to Action Section */
+.application-cta {
+    padding: 80px 20px;
+    background: #d4edda; /* Light green background */
+    text-align: center;
+}
+
+.application-cta .large-btn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.application-cta .contact-note {
+    font-size: 1rem;
+    color: #555;
+}
+
+.application-cta .contact-note a {
+    color: #8dc63f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.application-cta .contact-note a:hover {
+    text-decoration: underline;
+}
+
+
+/* Chat Widget */
+.chat-whatsapp-link {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensure it's above other content */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.chat-widget {
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer; /* Indicate it's clickable */
+}
+.chat-widget .message {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    /* Initial state for animation */
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for fading */
+}
+.chat-widget .profile-pic img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8dc63f; /* Add a subtle border */
+}
+
+/* --- FOOTER SECTION STYLES --- */
+.footer {
+    background: #333;
+    color: white;
+    padding: 60px 20px 20px;
+    font-size: 0.95rem;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-col h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #8dc63f;
+    position: relative;
+}
+
+.footer-col h3::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #8dc63f;
+    margin-top: 8px;
+    left: 0;
+    position: absolute;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #8dc63f;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social-links img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.footer-col.newsletter input[type="email"] {
+    width: calc(100% - 80px);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.footer-col.newsletter button {
+    width: 70px;
+    padding: 10px;
+    background: #8dc63f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.footer-col.newsletter button:hover {
+    background: #6fa230;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive Adjustments for Admissions Page */
+@media (max-width: 768px) {
+    .admissions-hero {
+        padding: 80px 20px;
+    }
+    .admissions-hero h1 {
+        font-size: 2.2rem;
+    }
+    .admissions-hero p {
+        font-size: 1rem;
+    }
+
+    .process-steps {
+        grid-template-columns: 1fr; /* Stack steps on mobile */
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* Stack info cards on mobile */
+    }
+
+    .step-card, .info-card {
+        padding: 25px;
+    }
+
+    .primary-btn {
+        width: 100%; /* Full width buttons on mobile */
+        text-align: center;
+    }
+    .info-card .primary-btn {
+        align-self: center; /* Center buttons within info cards on mobile */
+    }
+}
