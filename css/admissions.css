@@ -84,7 +84,7 @@
 
 .admissions-hero {
     /* Background image with overlay for readability, consistent with programs-hero */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/sch1.jpg') center center/cover no-repeat; /* Using sch1.jpg for variety */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/science.png') center center/cover no-repeat; /* Using sch1.jpg for variety */
     color: white;
     text-align: center;
     padding: 100px 20px;

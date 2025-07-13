@@ -1,4 +1,17 @@
-/* Styles specific to academic-programs-details.html */
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Inter', sans-serif; /* Changed font to Inter */
+    line-height: 1.6;
+    background: #f9f9f9;
+    color: #333;
+    overflow-x: hidden; /* Ensures no horizontal scrolling */
+}
+
 /* Navigation Bar */
 .navbar {
     background: white;
@@ -24,7 +37,7 @@
     padding: 0 20px; /* Crucial for preventing content from touching edges */
 }
 
-/* --- LOGO SECTION MODIFICATION START --- */
+/* --- LOGO SECTION --- */
 .logo {
     font-weight: bold;
     font-size: 1.8rem;
@@ -40,7 +53,6 @@
     border-radius: 20%; /* Keep this if you want rounded corners, change to 50% for circular */
     display: block; /* Removes any extra space below the image */
 }
-/* --- LOGO SECTION MODIFICATION END --- */
 
 /* Desktop Navigation Links */
 .nav-links {
@@ -76,35 +88,8 @@
     border-radius: 2px;
     transition: all 0.3s ease-in-out;
 }
-.page-content {
-    padding-top: 80px; /* Space below fixed navbar */
-}
 
-.details-hero {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/academic-banner.jpg') center center/cover no-repeat;
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-    min-height: 40vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.details-hero h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    color: #8dc63f;
-}
-
-.details-hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Common section heading and subhead styles, replicated for consistency */
+/* Common section heading and subhead styles (used across multiple pages) */
 .section-heading {
     font-size: 2.5rem;
     color: #8dc63f;
@@ -115,114 +100,9 @@
 .section-subhead {
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 50px;
+    margin-bottom: 50px; /* Adjusted to be consistent with other sections */
     color: #555;
     text-align: center;
-}
-
-/* Program Overview Section */
-.program-overview {
-    padding: 80px 20px;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.curriculum-levels {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.level-card {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.level-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-}
-
-.level-card h3 {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.level-card p {
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.level-card ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 15px;
-}
-
-.level-card ul li {
-    margin-bottom: 8px;
-    color: #444;
-}
-
-.level-card ul li::before {
-    content: '📚'; /* Book icon for academic lists */
-    color: #8dc63f;
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-/* Learning Philosophy Section */
-.learning-philosophy {
-    padding: 80px 20px;
-    background: #f5f5f5;
-    text-align: center;
-}
-
-.philosophy-content {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: left;
-    background: white;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.philosophy-content p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.philosophy-content ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.philosophy-content ul li {
-    margin-bottom: 10px;
-    color: #333;
-    font-size: 0.95rem;
-}
-
-.philosophy-content ul li::before {
-    content: '💡'; /* Lightbulb icon */
-    color: #8dc63f;
-    margin-right: 10px;
-    font-weight: bold;
 }
 
 /* Chat Widget */
@@ -359,61 +239,120 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Responsive Adjustments for Admissions Page */
+/* Responsive Adjustments (Global) */
 @media (max-width: 768px) {
-    .admissions-hero {
-        padding: 80px 20px;
-    }
-    .admissions-hero h1 {
-        font-size: 2.2rem;
-    }
-    .admissions-hero p {
-        font-size: 1rem;
+    /* Navbar adjustments for mobile */
+    .navbar .container {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: space-between; /* Space out logo and toggle */
     }
 
-    .process-steps {
-        grid-template-columns: 1fr; /* Stack steps on mobile */
+    .nav-links {
+        /* Initially hidden and positioned for mobile */
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%; /* Take full width */
+        background: white; /* Background for the dropdown menu */
+        position: absolute; /* Position relative to navbar */
+        top: 100%; /* Below the navbar */
+        left: 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 10px 0;
+        border-top: 1px solid #eee;
+        z-index: 99; /* Below the toggle, above other content */
     }
 
-    .info-grid {
-        grid-template-columns: 1fr; /* Stack info cards on mobile */
+    .nav-links.active {
+        display: flex; /* Show when active */
     }
 
-    .step-card, .info-card {
-        padding: 25px;
+    .nav-links a {
+        margin: 10px 20px; /* Adjust spacing for stacked links */
+        text-align: center; /* Center links in mobile menu */
+        padding: 10px 0; /* More padding for touch targets */
+        border-bottom: 1px solid #eee; /* Separator for links */
+    }
+    .nav-links a:last-child {
+        border-bottom: none; /* No border on the last link */
     }
 
-    .primary-btn {
-        width: 100%; /* Full width buttons on mobile */
+    .menu-toggle {
+        display: flex; /* Show hamburger menu on mobile */
+    }
+
+    /* Hamburger menu active state (transforms to 'X') */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0; /* Hide middle bar */
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* General responsive adjustments */
+    .overlay-left {
+        max-width: 90%;
+        margin-left: 20px;
+        font-size: 0.85rem;
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+    .overlay-left h1 {
+        font-size: 1.4rem;
+    }
+
+    /* Services section adjustments (if applicable to index.html) */
+    .services > .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .service-boxes-wrapper {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;
+        gap: 20px;
+    }
+    .service-box {
+        width: 90%; /* Make service boxes closer to full width on mobile */
+        margin: 0; /* Remove individual margins as gap handles spacing */
+    }
+
+    /* Callouts section adjustments (if applicable to index.html) */
+    .callouts {
+        flex-direction: column;
+        align-items: center;
+    }
+    .callout {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* About section adjustments (if applicable to index.html) */
+    .about-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-content img, .about-content .text {
+        width: 90%;
+    }
+
+    /* Team and Testimonials grid adjustments (if applicable to index.html) */
+    .team-grid, .testimonial-grid, .footer .container {
+        grid-template-columns: 1fr; /* Single column on mobile for cards */
+    }
+
+    /* Footer specific mobile adjustments */
+    .footer-col.about-school, .footer-col.quick-links,
+    .footer-col.contact-info, .footer-col.newsletter {
         text-align: center;
     }
-    .info-card .primary-btn {
-        align-self: center; /* Center buttons within info cards on mobile */
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
     }
-}
-
-
-/* Responsive Adjustments for Academic Programs Details Page */
-@media (max-width: 768px) {
-    .details-hero {
-        padding: 80px 20px;
-    }
-    .details-hero h1 {
-        font-size: 2.2rem;
-    }
-    .details-hero p {
-        font-size: 1rem;
-    }
-
-    .curriculum-levels {
-        grid-template-columns: 1fr; /* Stack cards on mobile */
-    }
-
-    .level-card {
-        padding: 25px;
-    }
-
-    .philosophy-content {
-        padding: 25px;
+    .social-links {
+        text-align: center;
+        margin-top: 15px;
     }
 }
