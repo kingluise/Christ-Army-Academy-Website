@@ -1,6 +1,4 @@
-/* Styles specific to the programs.html page */
-
-
+/* Styles specific to exam-prep-details.html */
 /* Navigation Bar */
 .navbar {
     background: white;
@@ -79,30 +77,28 @@
     transition: all 0.3s ease-in-out;
 }
 .page-content {
-    /* This padding ensures content doesn't get hidden under the fixed navbar */
-    padding-top: 80px;
+    padding-top: 80px; /* Space below fixed navbar */
 }
 
-.programs-hero {
-    /* Background image with overlay for readability */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/SCH.jpg') center center/cover no-repeat;
+.details-hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/exam-banner.jpg') center center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 100px 20px;
-    min-height: 40vh; /* Minimum height for the hero section */
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.programs-hero h1 {
+.details-hero h1 {
     font-size: 3rem;
     margin-bottom: 15px;
-    color: #8dc63f; /* Highlight color for the heading */
+    color: #8dc63f;
 }
 
-.programs-hero p {
+.details-hero p {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
@@ -119,86 +115,119 @@
 .section-subhead {
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     color: #555;
     text-align: center;
 }
 
-
-.program-details {
+/* Exam Prep Overview Section */
+.exam-prep-overview {
     padding: 80px 20px;
-    background: #f9f9f9; /* Light background for the details section */
-    display: grid;
-    /* Responsive grid: auto-fit ensures columns wrap, minmax sets min/max width */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Space between grid items */
-    max-width: 1200px;
-    margin: 0 auto; /* Center the grid */
+    background: #f9f9f9;
+    text-align: center;
 }
 
-.program-level {
+.exam-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.exam-card {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    display: flex; /* Make it a flex container to manage content and button */
-    flex-direction: column; /* Stack content vertically */
-    justify-content: space-between; /* Pushes the button to the bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.program-level:hover {
-    transform: translateY(-5px); /* Lifts the card slightly on hover */
-    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* More prominent shadow on hover */
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
 }
 
-.program-level h3 {
-    color: #8dc63f; /* Highlight color for program titles */
+.exam-card h3 {
     font-size: 1.8rem;
+    color: #333;
     margin-bottom: 15px;
 }
 
-.program-level p {
-    margin-bottom: 15px;
+.exam-card p {
+    font-size: 0.95rem;
     color: #555;
-    flex-grow: 1; /* Allows the paragraph to take up available space, pushing the button down */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
 }
 
-.program-level ul {
-    list-style: none; /* Remove default list bullets */
+.exam-card ul {
+    list-style: none;
     padding-left: 0;
-    margin-bottom: 20px; /* Space between list and button */
+    margin-top: 15px;
 }
 
-.program-level ul li {
+.exam-card ul li {
     margin-bottom: 8px;
     color: #444;
 }
 
-.program-level ul li::before {
-    content: '✓'; /* Custom checkmark icon */
+.exam-card ul li::before {
+    content: '📝'; /* Pencil icon for exam lists */
     color: #8dc63f;
     margin-right: 10px;
     font-weight: bold;
 }
 
-.learn-more-btn {
-    display: inline-block; /* Allows padding and margin */
-    padding: 10px 20px;
-    background: #333; /* Dark background for the button */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-decoration: none; /* In case it becomes an <a> tag later */
-    transition: background 0.3s ease; /* Smooth hover effect */
-    align-self: flex-start; /* Aligns the button to the left within its flex container */
+/* Success Stories Section */
+.success-stories {
+    padding: 80px 20px;
+    background: #f5f5f5;
+    text-align: center;
 }
 
-.learn-more-btn:hover {
-    background: #555; /* Slightly lighter background on hover */
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.story-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.story-card p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.story-card h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.story-card span {
+    font-size: 0.9rem;
+    color: #777;
 }
 
 
@@ -336,17 +365,59 @@
     color: rgba(255, 255, 255, 0.7);
 }
 
-
-/* --- Responsive Adjustments for Programs Page --- */
+/* Responsive Adjustments for Admissions Page */
 @media (max-width: 768px) {
-    .programs-hero {
+    .admissions-hero {
         padding: 80px 20px;
     }
-    .programs-hero h1 {
+    .admissions-hero h1 {
         font-size: 2.2rem;
     }
-    .programs-hero p {
+    .admissions-hero p {
         font-size: 1rem;
     }
-    /* program-details already uses auto-fit for responsiveness, which handles smaller screens */
+
+    .process-steps {
+        grid-template-columns: 1fr; /* Stack steps on mobile */
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr; /* Stack info cards on mobile */
+    }
+
+    .step-card, .info-card {
+        padding: 25px;
+    }
+
+    .primary-btn {
+        width: 100%; /* Full width buttons on mobile */
+        text-align: center;
+    }
+    .info-card .primary-btn {
+        align-self: center; /* Center buttons within info cards on mobile */
+    }
+}
+/* Responsive Adjustments for Exam Prep Details Page */
+@media (max-width: 768px) {
+    .details-hero {
+        padding: 80px 20px;
+    }
+    .details-hero h1 {
+        font-size: 2.2rem;
+    }
+    .details-hero p {
+        font-size: 1rem;
+    }
+
+    .exam-cards {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+
+    .exam-card {
+        padding: 25px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr; /* Stack stories on mobile */
+    }
 }
